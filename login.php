@@ -10,7 +10,7 @@
         try{
             $ris = mysqli_query($conn, $sql);
         } catch (Exception $e) {
-            die("<center><h1>Errore Sql</h1><h3> query eseguita: SELECT * FROM ordini WHERE prodotto LIKE '%<font color='red'>$ord</font>%';</h3></center>");
+            die("<center><h1>Errore Sql</h1><h3> query eseguita: SELECT * FROM users WHERE username='<font color='red'>$user</font>%' AND passwd='<font color='red'>$passwd</font>';</h3></center>");
         }
         echo "<center>";
         echo "SELECT * FROM users WHERE username='";
