@@ -7,9 +7,11 @@
         
         $sql = "SELECT * FROM users WHERE username='$user' AND passwd='$passwd'";
 
-
-        $ris = mysqli_query($conn, $sql);
-
+        try{
+            $ris = mysqli_query($conn, $sql);
+        } catch (Exception $e) {
+            die("<center><h1>Errore Sql</h1><h3> query eseguita: SELECT * FROM ordini WHERE prodotto LIKE '%<font color='red'>$ord</font>%';</h3></center>");
+        }
         echo "<center>";
         echo "SELECT * FROM users WHERE username='";
         echo "<font color='red'>$user</font>";
